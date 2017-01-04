@@ -38,8 +38,7 @@ public class FileUploadController {
      @RequestMapping(value = "/fileBase", method = POST)
     public void base(@RequestBody List<FromBean> fromBean) throws FileNotFoundException, IOException {
         
-       // System.out.println("com.clover.smt.controller.FileController.submit()" + fromBean.toString());
-        
+         
         for (FromBean bean : fromBean) {
           
             System.out.println("fname : "+bean.getFname());
