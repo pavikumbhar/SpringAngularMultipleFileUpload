@@ -1,0 +1,60 @@
+<div class="section">
+    <h3>{{headingTitle}}</h3>
+
+</div>
+
+
+<div class="container" >
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <form ng-submit="addNew()">
+                            <table class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th><input type="checkbox" ng-model="selectedAll" ng-click="checkAll()" /></th>
+                                        <th>Firstname</th>
+                                        <th>Lastname</th>
+                                        <th>Email</th>
+                                         <th>File</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="personalDetail in personalDetails">
+                                        <td>
+                                            <input type="checkbox" ng-model="personalDetail.selected"/></td>
+                                        <td>
+                                            <input type="text" class="form-control" ng-model="personalDetail.fname" /></td>
+                                        <td>
+                                            <input type="text" class="form-control" ng-model="personalDetail.lname" /></td>
+                                        <td>
+                                            <input type="email" class="form-control" ng-model="personalDetail.email" /></td>
+                                        
+                                        <td>
+                                            <input type="file" class="form-control"   ng-model="personalDetail.files" name="files" base-sixty-four-input="" multiple="" /></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="form-group">
+                                <input ng-hide="!personalDetails.length" type="button" class="btn btn-danger pull-right" ng-click="remove()" value="Remove"/>
+                                <input type="submit" class="btn btn-primary addnew pull-right" value="Add New"/>
+                                 <input  type="button" class="btn btn-success pull-right" ng-click="save(personalDetails)" value="save"/>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div ng-controller="DownloadSampleCtrl as ctrl">
+        <button ng-click="ctrl.download('pro_spring_batch.pdf')">Download</button>
+</div>
+
+
+
+
+
